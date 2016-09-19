@@ -8,8 +8,10 @@ class App extends Component {
       <h1>Kiss 'n' Makeup</h1>
       <footer>
         <p>Keeping makeup organization simple</p>
-        <button className='sign'>Sign Up</button>
-        <button className='log'>Log In</button>
+        <div className='Buttons'>
+          <button className='sign'>Sign Up</button>
+          <button className='log'>Log In</button>
+        </div>
       </footer>
     </div>
   }

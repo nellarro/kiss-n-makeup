@@ -1,19 +1,31 @@
 import React, { Component } from 'react'
 import '../styles/landing.sass'
+import '../styles/sign.sass'
+import Landing from '../components/Landing.js'
+import Sign from '../components/Sign.js'
 
 class App extends Component {
-
+  constructor () {
+    super()
+    this.state = {
+      currentScreen: 'Landing'
+    }
+  }
+  navigateToPage = (scr) => {
+    this.setState({currentScreen: scr})
+  }
   render () {
-    return <div className='Landing'>
-      <h1>Kiss 'n' Makeup</h1>
-      <footer>
-        <p>Keeping makeup organization simple</p>
-        <div className='Buttons'>
-          <button className='sign'>Sign Up</button>
-          <button className='log'>Log In</button>
-        </div>
-      </footer>
-    </div>
+    let screen
+    switch (this.state.currentScreen) {
+      case 'Landing': screen = <Landing navigate={this.navigateToPage} />
+        break
+      case 'Sign': screen = <Sign navigate={this.navigateToPage} />
+        break
+      default: screen = <Landing navigate={this.navigateToPage} />
+    }
+    return (
+      <div>{screen}</div>
+    )
   }
 }
 

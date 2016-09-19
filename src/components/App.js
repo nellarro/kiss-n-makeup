@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/screen.sass'
+import '../styles/landing.sass'
 
 class App extends Component {
 

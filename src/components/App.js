@@ -8,7 +8,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      currentScreen: 'Landing'
+      currentScreen: 'Sign'
     }
   }
   navigateToPage = (scr) => {

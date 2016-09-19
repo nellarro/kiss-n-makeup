@@ -5,10 +5,12 @@ class App extends Component {
 
   render () {
     return <div className='Landing'>
-      <h1 className='hone'>Kiss 'n' Makeup</h1>
-      <p>Keeping makeup organization simple</p>
-      <button className='sign'>Sign Up</button>
-      <button className='log'>Log In</button>
+      <h1>Kiss 'n' Makeup</h1>
+      <footer>
+        <p>Keeping makeup organization simple</p>
+        <button className='sign'>Sign Up</button>
+        <button className='log'>Log In</button>
+      </footer>
     </div>
   }
 }

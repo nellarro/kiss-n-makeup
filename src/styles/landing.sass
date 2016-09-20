@@ -6,6 +6,11 @@ $serif-two: 'Raleway', sans-serif
 $base-text-size: 16px
 $base-font-family: sans-serif
 
+$beige: #E9C8B0
+$darkbeige: #B4A894
+$salmon: #FF9999
+$darksalmon: #C87263
+
 html
   text-size-adjust: 100%
 
@@ -22,7 +27,7 @@ body
   min-height: 100vh
 
   h1
-    color: #E9C8B0
+    color: lighten($salmon, 6%)
     font:
       family: $cursive-one
       size: 50px
@@ -39,7 +44,7 @@ body
     width: 100%
 
   p
-    color: #B4A894
+    color: $darkbeige
     font:
       family: $serif-two
       size: 30px
@@ -54,16 +59,18 @@ body
       size: 30px
 
   .sign
-    background-color: #C87263
+    background-color: $darksalmon
     color: #323346
+    transition: color .5s linear
 
   .sign:hover
-    background-color: #FB5858
+    background-color: darken($salmon, 8%)
     color: #D0D0D0
 
   .log
     background-color: transparent
-    color: #313245
+    color: white
+    transition: color .5s linear
 
   .log:hover
-    color: #D0D0D0
+    color: darken($darkbeige, 50%)

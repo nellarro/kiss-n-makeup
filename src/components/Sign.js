@@ -7,10 +7,12 @@ class Sign extends Component {
     return (
       <div className='Sign'>
         <h1>Sign up</h1>
-        <div className='buttons'>
-          <button className='facebook'><i className="fa fa-facebook-square" aria-hidden="true"></i></button>
-          <button className='twitter'><i className='fa fa-twitter' aria-hidden='true'></i></button>
-          <button className='google'><i className='fa fa-google' aria-hidden='true'></i></button>
+        <div className='firstrow'>
+          <button className='facebook'><i className='fa fa-facebook-square' aria-hidden='true' /></button>
+          <button className='twitter'><i className='fa fa-twitter' aria-hidden='true' /></button>
+          <button className='instagram'><i className='fa fa-instagram' aria-hidden='true' /></button>
+          <button className='snapchat'><i className='fa fa-snapchat-ghost' aria-hidden='true' /></button>
+          <button className='google'><i className='fa fa-google' aria-hidden='true' /></button>
         </div>
       </div>)
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/landing.sass'
 import '../styles/sign.sass'
+import '../styles/log.sass'
 import Landing from '../components/Landing.js'
 import Sign from '../components/Sign.js'
 import Log from '../components/Log.js'

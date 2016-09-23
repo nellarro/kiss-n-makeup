@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import '../styles/sign.sass'
 
+Sign.propTypes = {
+  navigate: React.PropTypes.func.isRequired
+}
+
 class Sign extends Component {
   changeToLand = () => {
     this.props.navigate('Landing')

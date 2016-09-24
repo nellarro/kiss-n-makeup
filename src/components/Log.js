@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/log.sass'
+// import Avatar from '../stock_user_image.jpg'
 
 class Log extends Component {
   changeToLand = () => {

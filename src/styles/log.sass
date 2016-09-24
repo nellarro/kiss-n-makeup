@@ -6,15 +6,15 @@
 // H andle
 // A niken
 
-.Sign
+.Log
   background:
-    image: url(../brush.jpg)
+    image: url(../gold_white_eyeshadow.jpg)
     size: cover
     repeat: no-repeat
   min-height: 100vh
 
 h1
-  color: #FF9999
+  color: $salmon
   font:
     family: $cursive-one
     size: 45px
@@ -22,54 +22,36 @@ h1
   padding-top: 2em
   text-align: center
 
-.firstrow
+.userbutton
   display: flex
-  justify-content: space-around
-  padding-top: 12em
+  justify-content: center
+  padding-top: 2.5em
 
 button
+  background-color: transparent
   border-color: darken($salmon, 4%)
   border-radius: 30px
   color: white
   font-size: 40px
 
-  i
-    height: 40px
-    width: 40px
+.avatar
+  background-image: url(../stock_user_image.jpg)
+  background-size: contain
+  height: 150px
+  width: 150px
+  border-radius: 75px
 
 .exit
   background-color: transparent
   border-color: transparent
-  color: #D0D0D0
+  color: #394143
   font:
     family: $serif-two
-    size: 15px
+    size: 18px
+    weight: bolder
   transition: background-color .7s linear
   transition: color .6s linear
 
 .exit:hover
   background-color: lighten($salmon, 15%)
   color: #CB9D70
-
-.facebook
-  background-color: #3F589B
-
-.snapchat
-  background-color: #FFE143
-
-.twitter
-  background-color: #00ABF0
-
-.google
-  background:
-    color: white
-    image: url('https://developers.google.com/identity/images/g-logo.png')
-    repeat: no-repeat
-    size: 40px
-    position: center
-  color: transparent
-
-.instagram
-    background:
-      image: url('http://pbs.twimg.com/media/CnkrLf4WcAAao7k.jpg:small')
-      size: cover

@@ -5,6 +5,7 @@ import '../styles/log.sass'
 import Landing from '../components/Landing.js'
 import Sign from '../components/Sign.js'
 import Log from '../components/Log.js'
+import User from '../components/User.js'
 
 class App extends Component {
   constructor () {
@@ -24,6 +25,8 @@ class App extends Component {
       case 'Sign': screen = <Sign navigate={this.navigateToPage} />
         break
       case 'Log': screen = <Log navigate={this.navigateToPage} />
+        break
+      case 'User': screen = <User navigate={this.navigateToPage} />
         break
       default: screen = <Landing navigate={this.navigateToPage} />
     }

@@ -8,7 +8,14 @@ class User extends Component {
     return (
       <div>
         <header className='userHeader'>
-          <button className='userAvatar'><img src={Avatar} /></button>
+          <button className='userAvatar'><img src={Avatar} className='avatarImg' /></button>
+          <nav>
+            <ul>
+              <li><a className='collection' href='#'>My Collection</a></li>
+              <li><a href='#'>Browse</a></li>
+              <li><a href='#'>Favorites</a></li>
+            </ul>
+          </nav>
         </header>
       </div>
   ) }

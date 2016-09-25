@@ -6,7 +6,7 @@ class User extends Component {
 
   render () {
     return (
-      <div>
+      <div className='userPage'>
         <header className='userHeader'>
           <button className='userAvatar'><img src={Avatar} className='avatarImg' /></button>
           <nav>

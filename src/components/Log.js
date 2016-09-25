@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/log.sass'
-// import Avatar from '../stock_user_image.jpg'
+import AvatarImage from '../stock_user_image.jpg'
 
 class Log extends Component {
   changeToLand = () => {
@@ -16,7 +16,8 @@ class Log extends Component {
         <button className='exit' onClick={this.changeToLand} >X</button>
         <h1>Log In</h1>
         <div className='userbutton'>
-          <button className='avatar' onClick={this.changeToUser} />
+          <button className='logAvatar' onClick={this.changeToUser}><img src={AvatarImage} />
+          </button>
         </div>
       </div>)
   }

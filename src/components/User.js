@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Avatar from '../stock_user_image.jpg'
+import Image from '../stock_user_image.jpg'
 import '../styles/user.sass'
 
 class User extends Component {
@@ -17,6 +17,16 @@ class User extends Component {
             </ul>
           </nav>
         </header>
+        <div className='containerOfBoxes'>
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+          <img src={Image} alt='image1' />
+        </div>
       </div>
   ) }
 }

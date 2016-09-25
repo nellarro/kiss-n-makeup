@@ -17,6 +17,15 @@ class User extends Component {
             </ul>
           </nav>
         </header>
+        <div className='gallery'>
+          <div className='galleryContainer'>
+            <div className='container-border' />
+            <img src={Image} height='250' width='250' alt='1' />
+            <img src={Image} height='250' width='250' alt='2' />
+            <img src={Image} height='250' width='250' alt='3' />
+            <img src={Image} height='250' width='250' alt='4' />
+          </div>
+        </div>
       </div>
   ) }
 }

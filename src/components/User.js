@@ -8,7 +8,7 @@ class User extends Component {
     return (
       <div className='userPage'>
         <header className='userHeader'>
-          <button className='userAvatar'><img src={Avatar} className='avatarImg' /></button>
+          <img src={Image} className='avatarImg' />
           <nav>
             <ul>
               <li><a className='collection' href='#'>My Collection</a></li>
@@ -17,16 +17,6 @@ class User extends Component {
             </ul>
           </nav>
         </header>
-        <div className='containerOfBoxes'>
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-          <img src={Image} alt='image1' />
-        </div>
       </div>
   ) }
 }

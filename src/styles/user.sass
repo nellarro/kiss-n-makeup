@@ -1,37 +1,58 @@
 @import 'landing'
 
+// **************
+//
+// This is just here so I don't forget it.
+//
+// <div className='containerOfBoxes'>
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+//   <img src={Image} alt='image1' />
+// </div>
+//
+// **************
+
 .userPage
-  background-image: url(../wood.jpg)
+  background:
+    image: url(../wood.jpg)
+    repeat: no-repeat
+    size: cover
   height: 100vh
-  background-size: cover
-  background-repeat: no-repeat
 
 .userHeader
   background-color: #323346
-  min-height: 140px
+  min-height: 120px
   position: relative
 
 nav
-  padding-left: 4px
-  margin: 0px
-  position: absolute
   bottom: 0
+  margin: 0px
+  padding-left: 4px
+  position: absolute
 
-ul
+nav ul
   list-style: none
   margin: 0px
   padding-left: 20px
 
-li
+nav li
   display: inline
-  padding-right: 1em
   font-size: 20px
+  padding-right: 1em
 
-a
+nav a
   color: white
-  text-decoration: none
   font-family: $serif-two
+  text-decoration: none
   transition: color .5s linear
+
+nav a:hover
+  color: $salmon
 
 .collection
   color: #E75481
@@ -40,16 +61,13 @@ a
 .collection:hover
   color: white
 
-a:hover
-  color: $salmon
-
-button.userAvatar
+.avatarImg
+  border:
+    color: transparent
+    radius: 75px
+  float: right
   height: 100px
   width: 100px
-  border-radius: 75px
-  border-color: transparent
-
-button.userAvatar
-  padding-right: 2.5em
-  padding-top: .7em
-  float: right
+  padding:
+    top: .5em
+    right: .5em

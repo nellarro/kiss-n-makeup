@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import '../styles/sign.sass'
 import Rebase from 're-base'
+<<<<<<< HEAD
 import firebase from '../firebase/firebase.js'
+=======
+import info from '../config/base.js'
+>>>>>>> 0d29a0a725f0839a7d6b5ba6c35d3b77ef4270aa
 
 class Sign extends Component {
   constructor (props) {
@@ -40,7 +44,11 @@ class Sign extends Component {
         <h1>Sign up</h1>
         <div className='firstrow'>
           <button className='facebook' onClick={this._handleClick}><i className='fa fa-facebook-square' aria-hidden='true' /></button>
+<<<<<<< HEAD
           <button className='twitter' onClick={this._handleClick}><i className='fa fa-twitter' aria-hidden='true' /></button>
+=======
+          <button className='twitter'><i className='fa fa-twitter' aria-hidden='true' /></button>
+>>>>>>> 0d29a0a725f0839a7d6b5ba6c35d3b77ef4270aa
           <button className='instagram'><i className='fa fa-instagram' aria-hidden='true' /></button>
           <button className='snapchat'><i className='fa fa-snapchat-ghost' aria-hidden='true' /></button>
           <button className='google' onClick={this._handleClick}><i className='fa fa-google' aria-hidden='true' /></button>

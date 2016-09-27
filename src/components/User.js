@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Image from '../stock_user_image.jpg'
 import '../styles/user.sass'
+import { Link } from 'react-router'
 
 class User extends Component {
 
@@ -11,7 +12,7 @@ class User extends Component {
           <img src={Image} className='avatarImg' />
           <nav>
             <ul>
-              <li><a className='collection' href='#'>My Collection</a></li>
+              <Link to='/MyCollection'><li><a className='collection' href='#'>My Collection</a></li></Link>
               <li><a href='#'>Browse</a></li>
               <li><a href='#'>Favorites</a></li>
             </ul>

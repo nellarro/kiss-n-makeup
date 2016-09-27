@@ -3,7 +3,7 @@ import '../styles/sign.sass'
 import rebase from 're-base'
 import firebase from '../firebase/firebase.js'
 import Landing from '../components/Landing.js'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 
 class Sign extends Component {
   constructor (props) {
@@ -17,21 +17,15 @@ class Sign extends Component {
     this._authHandler = this._authHandler.bind(this)
   }
 
-  changeToLand = () => {
-    this.props.navigate('Landing')
-  }
-
   _authHandler (error, user) {
-    history.push('/sign')
     if (error) {
       console.log(error)
-      history.push('/sign')
     } else {
       console.log(user)
       this.setState({user: user})
       console.log('is setState working', this.state)
       console.log(user.user.photoURL)
-
+      hashHistory.push('/log')
     }
   }
   _handleClickFB (event) {

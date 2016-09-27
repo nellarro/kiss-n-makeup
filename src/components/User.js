@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import Image from '../stock_user_image.jpg'
 import '../styles/user.sass'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 
 class User extends Component {
+
+  _handleClick = () => {
+    hashHistory.push('/log')
+  }
 
   render () {
     return (
       <div className='userPage'>
         <header className='userHeader'>
-          <img src={Image} className='avatarImg' />
+          <img src={Image} onClick={this._handleClick} className='avatarImg' />
           <nav>
             <ul>
               <Link to='/MyCollection'><li><a className='collection' href='#'>My Collection</a></li></Link>

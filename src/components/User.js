@@ -24,6 +24,7 @@ class User extends Component {
             <img src={Image} height='250' width='250' alt='2' />
             <img src={Image} height='250' width='250' alt='3' />
             <img src={Image} height='250' width='250' alt='4' />
+            <input type='file' className='files' multiple />
           </div>
         </div>
       </div>

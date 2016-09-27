@@ -6,34 +6,19 @@ import Landing from '../components/Landing.js'
 import Sign from '../components/Sign.js'
 import Log from '../components/Log.js'
 import User from '../components/User.js'
+import { Router, Route, hashHistory } from 'react-router'
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = {
-      currentScreen: 'Landing'
-    }
-  }
-  navigateToPage = (scr) => {
-    this.setState({currentScreen: scr})
-  }
+
   render () {
-    let screen
-    switch (this.state.currentScreen) {
-      case 'Landing': screen = <Landing navigate={this.navigateToPage} />
-        break
-      case 'Sign': screen = <Sign navigate={this.navigateToPage} />
-        break
-      case 'Log': screen = <Log navigate={this.navigateToPage} />
-        break
-      case 'User': screen = <User navigate={this.navigateToPage} />
-        break
-      default: screen = <Landing navigate={this.navigateToPage} />
-    }
     return (
-      <div>{screen}</div>
-    )
-  }
+    <Router history={ hashHistory }>
+      <Route path='/' component= {Landing} />
+      <Route path='/sign' component= {Sign} />
+      <Route path='/log' component= {Log} />
+      <Route path='/MyCollection' component= {User} />
+    </Router>
+  )}
 }
 
 export default App

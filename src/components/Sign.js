@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../styles/sign.sass'
 import rebase from 're-base'
 import firebase from '../firebase/firebase.js'
+import Landing from '../components/Landing.js'
+import { Link } from 'react-router'
 
 class Sign extends Component {
   constructor (props) {
@@ -12,9 +14,11 @@ class Sign extends Component {
     this._handleClick = this._handleClick.bind(this)
     this._authHandleer = this._authHandler.bind(this)
   }
+
   changeToLand = () => {
     this.props.navigate('Landing')
   }
+
   _authHandler (error, user) {
     if (error) {
       console.log(error)
@@ -36,7 +40,7 @@ class Sign extends Component {
   render () {
     return (
       <div className='Sign'>
-        <button onClick={this.changeToLand} className='exit'>X</button>
+        <Link to='/'><button className='exit'>X</button></Link>
         <h1>Sign up</h1>
         <div className='firstrow'>
           <button className='facebook' onClick={this._handleClick}><i className='fa fa-facebook-square' aria-hidden='true' /></button>

@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import '../styles/landing.sass'
+import { Link } from 'react-router'
+import Sign from '../components/Sign.js'
+import Log from '../components/Log.js'
 
 class Landing extends Component {
-  changeToSign = () => {
-    this.props.navigate('Sign')
-  }
-  changeToLog = () => {
-    this.props.navigate('Log')
-  }
 
   render () {
     return <div className='Landing'>
@@ -15,8 +12,8 @@ class Landing extends Component {
       <footer>
         <p>Keeping makeup organization simple</p>
         <div className='Buttons'>
-          <button onClick={this.changeToSign} className='sign'>Sign Up</button>
-          <button onClick={this.changeToLog} className='log'>Log In</button>
+          <Link to='/sign'><button className='sign'>Sign Up</button></Link>
+          <Link to='/log'><button className='log'>Log In</button></Link>
         </div>
       </footer>
     </div>

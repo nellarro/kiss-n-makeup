@@ -24,12 +24,13 @@ class User extends Component {
         </header>
         <div className='gallery'>
           <div className='galleryContainer'>
-            <div className='container-border' />
-            <img src={Image} height='250' width='250' alt='1' />
-            <img src={Image} height='250' width='250' alt='2' />
-            <img src={Image} height='250' width='250' alt='3' />
-            <img src={Image} height='250' width='250' alt='4' />
-            <input type='file' className='files' multiple />
+            <div className='container-border'>
+              <img src={Image} height='250' width='250' alt='1' />
+              <img src={Image} height='250' width='250' alt='2' />
+              <img src={Image} height='250' width='250' alt='3' />
+              <img src={Image} height='250' width='250' alt='4' />
+              <input type='file' id='files' multiple accept='image/*' />
+            </div>
           </div>
         </div>
       </div>

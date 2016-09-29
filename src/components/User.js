@@ -2,11 +2,30 @@ import React, { Component } from 'react'
 import Image from '../stock_user_image.jpg'
 import '../styles/user.sass'
 import { Link, hashHistory } from 'react-router'
+import firebase from '../firebase/firebase.js'
 
 class User extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      url: ''
+    }
+  }
 
   _handleClick = () => {
     hashHistory.push('/log')
+  }
+
+  uploadFile = () => {
+    let file = this.refs.upload.files[0]
+    let storageRef = firebase.storage().ref()
+    let imgRef = storageRef.child(file.name)
+    imgRef.put(file).then(function(snapshot) {
+      console.log('file uploaded')
+      imgRef.getDownloadURL().then((url) => {
+        this.setState({ url })
+      })
+    })
   }
 
   render () {
@@ -27,9 +46,8 @@ class User extends Component {
             <div className='container-border'>
               <img src={Image} height='250' width='250' alt='1' />
               <img src={Image} height='250' width='250' alt='2' />
-              <img src={Image} height='250' width='250' alt='3' />
-              <img src={Image} height='250' width='250' alt='4' />
-              <input type='file' id='files' multiple accept='image/*' />
+              <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
+              <img src={this.state.url} height='250' width='250'/>
             </div>
           </div>
         </div>

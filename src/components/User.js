@@ -12,6 +12,12 @@ class User extends Component {
     }
   }
 
+  downloadFile = () => {
+    let file = this.refs.upload.files[0]
+    let storage = firebase.storage()
+    let pathReference = storage.ref(file)
+  }
+
   _handleClick = () => {
     hashHistory.push('/log')
   }
@@ -20,7 +26,7 @@ class User extends Component {
     let file = this.refs.upload.files[0]
     let storageRef = firebase.storage().ref()
     let imgRef = storageRef.child(file.name)
-    imgRef.put(file).then(function(snapshot) {
+    imgRef.put(file).then((snapshot) => {
       console.log('file uploaded')
       imgRef.getDownloadURL().then((url) => {
         this.setState({ url })
@@ -46,8 +52,8 @@ class User extends Component {
             <div className='container-border'>
               <img src={Image} height='250' width='250' alt='1' />
               <img src={Image} height='250' width='250' alt='2' />
-              <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
               <img src={this.state.url} height='250' width='250'/>
+              <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>
         </div>

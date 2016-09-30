@@ -8,8 +8,24 @@ class User extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      url: ''
+      url: '',
+      pictures: []
     }
+  }
+
+  componentDidMount () {
+    let user = firebase.auth().currentUser
+    this.firebaseRef = firebase.syncState(`${user.uid}/pictures`, {
+      context: this,
+      state: 'pictures',
+      asArray: true
+    })
+  }
+
+  addAPic = (newPicture) => {
+    this.setState({
+      pictures: this.state.pictures.concat([newPicture])
+    })
   }
 
   downloadFile = () => {
@@ -30,6 +46,7 @@ class User extends Component {
       console.log('file uploaded')
       imgRef.getDownloadURL().then((url) => {
         this.setState({ url })
+        this.addAPic(url)
       })
     })
   }
@@ -52,7 +69,7 @@ class User extends Component {
             <div className='container-border'>
               <img src={Image} height='250' width='250' alt='1' />
               <img src={Image} height='250' width='250' alt='2' />
-              <img src={this.state.url} height='250' width='250'/>
+              <img src={this.state.pictures.map} height='250' width='250'/>
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

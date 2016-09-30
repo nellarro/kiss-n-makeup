@@ -6,6 +6,7 @@ import Landing from '../components/Landing.js'
 import Sign from '../components/Sign.js'
 import Log from '../components/Log.js'
 import User from '../components/User.js'
+import SinglePic from '../components/SinglePic.js'
 import { Router, Route, hashHistory } from 'react-router'
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
       <Route path='/sign' component= {Sign} />
       <Route path='/log' component= {Log} />
       <Route path='/MyCollection' component= {User} />
+      <Route path='/image' component= {SinglePic} />
     </Router>
   )}
 }

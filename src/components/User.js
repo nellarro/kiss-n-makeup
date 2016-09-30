@@ -38,6 +38,10 @@ class User extends Component {
     hashHistory.push('/log')
   }
 
+  _handleImageClick = () => {
+    hashHistory.push('/image')
+  }
+
   uploadFile = () => {
     let file = this.refs.upload.files[0]
     let storageRef = firebase.storage().ref()
@@ -67,9 +71,9 @@ class User extends Component {
         <div className='gallery'>
           <div className='galleryContainer'>
             <div className='container-border'>
-              <img src={Image} height='250' width='250' alt='1' />
-              <img src={Image} height='250' width='250' alt='2' />
-              <img src={this.state.pictures.map} height='250' width='250'/>
+              <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='1' />
+              <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='2' />
+              <img src={this.state.pictures} height='250' width='250'/>
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

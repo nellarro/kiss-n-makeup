@@ -45,6 +45,7 @@ class Sign extends Component {
   }
 
   render () {
+
     return (
       <div className='Sign'>
         <Link to='/'><button className='exit'>X</button></Link>

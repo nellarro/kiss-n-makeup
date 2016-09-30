@@ -4,6 +4,7 @@ import AvatarImage from '../stock_user_image.jpg'
 import { Link } from 'react-router'
 import User from '../components/User.js'
 import Landing from '../components/Landing.js'
+import firebase from '../firebase/firebase.js'
 
 class Log extends Component {
 

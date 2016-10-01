@@ -73,7 +73,7 @@ class User extends Component {
             <div className='container-border'>
               <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='1' />
               <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='2' />
-              <img src={this.state.pictures} height='250' width='250'/>
+              <img src={this.state.pictures.map} height='250' width='250'/>
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

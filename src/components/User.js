@@ -71,8 +71,6 @@ class User extends Component {
         <div className='gallery'>
           <div className='galleryContainer'>
             <div className='container-border'>
-              <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='1' />
-              <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='2' />
               {this.state.pictures.map((picture) => {
                 return <img src={picture} onClick={this._handleImageClick} height='250' width='250' />})}
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />

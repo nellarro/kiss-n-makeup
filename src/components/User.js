@@ -72,7 +72,7 @@ class User extends Component {
           <div className='galleryContainer'>
             <div className='container-border'>
               {this.state.pictures.map((picture) => {
-                return <img src={picture} onClick={this._handleImageClick} height='250' width='250' />})}
+                return <Link to='/image' ><img src={picture} height='250' width='250' /></Link>})}
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

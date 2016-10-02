@@ -38,10 +38,6 @@ class User extends Component {
     browserHistory.push('/log')
   }
 
-  _handleImageClick = () => {
-    browserHistory.push('/image')
-  }
-
   uploadFile = () => {
     let file = this.refs.upload.files[0]
     let storageRef = firebase.storage().ref()

@@ -3,7 +3,7 @@ import '../styles/sign.sass'
 import rebase from 're-base'
 import firebase from '../firebase/firebase.js'
 import Landing from '../components/Landing.js'
-import { Link, hashHistory } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 class Sign extends Component {
   constructor (props) {
@@ -25,7 +25,7 @@ class Sign extends Component {
       this.setState({user: user})
       console.log('is setState working', this.state)
       console.log(user.user.photoURL)
-      hashHistory.push('/log')
+      browserHistory.push('/log')
     }
   }
   _handleClickFB (event) {

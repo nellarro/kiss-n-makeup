@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Image from '../stock_user_image.jpg'
 import '../styles/user.sass'
-import { Link, hashHistory } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import firebase from '../firebase/firebase.js'
 
 class User extends Component {
@@ -35,11 +35,11 @@ class User extends Component {
   }
 
   _handleClick = () => {
-    hashHistory.push('/log')
+    browserHistory.push('/log')
   }
 
   _handleImageClick = () => {
-    hashHistory.push('/image')
+    browserHistory.push('/image')
   }
 
   uploadFile = () => {
@@ -73,8 +73,8 @@ class User extends Component {
             <div className='container-border'>
               <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='1' />
               <img src={Image} onClick={this._handleImageClick} height='250' width='250' alt='2' />
-              <div>{this.state.pictures.map((picture) => {
-                return <img src={picture} onClick={this._handleImageClick} height='250' width='250' />})} </div>
+              {this.state.pictures.map((picture) => {
+                return <img src={picture} onClick={this._handleImageClick} height='250' width='250' />})}
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

@@ -7,13 +7,13 @@ import Sign from '../components/Sign.js'
 import Log from '../components/Log.js'
 import User from '../components/User.js'
 import SinglePic from '../components/SinglePic.js'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 class App extends Component {
 
   render () {
     return (
-    <Router history={ hashHistory }>
+    <Router history={ browserHistory }>
       <Route path='/' component= {Landing} />
       <Route path='/sign' component= {Sign} />
       <Route path='/log' component= {Log} />

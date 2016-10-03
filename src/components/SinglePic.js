@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Image from '../stock_user_image.jpg'
+import Logo from '../kisslogo.gif'
+import User from '../components/User.js'
 import { Link, browserHistory } from 'react-router'
 import '../styles/singlepic.sass'
 import firebase from '../firebase/firebase.js'
@@ -44,6 +46,15 @@ class SinglePic extends Component {
           <input type='text' placeholder='Expiration'/>
           <input type='text' placeholder='Location' />
         </div>
+        <footer className='PageFooter'>
+          <div className='footer'>
+            <ul>
+              <li><img src={Logo} /></li>
+              <li><p> &copy; 2016 Copyright Jenell Pizarro. ARR.</p></li>
+              <li><a href='https://github.com/nellarro/v2-kiss-n-makeup'><i className="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </footer>
       </div>
     )
   }

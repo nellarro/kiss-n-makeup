@@ -1,5 +1,12 @@
 @import 'landing'
 
+html
+  position: relative
+  min-height: 100vh
+
+body
+  margin: 0 0 100px
+
 .userPage
   background:
     image: url(../wood.jpg)
@@ -64,3 +71,39 @@ nav a:hover
 
 .galleryContainer img
   padding: .5em
+
+.PageFooter
+  background-color: #323346
+  display: flex
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 7em
+  width: 100vw
+  a
+    display: inline
+    color: #F9F9FA
+    padding-left: .5em
+
+  a:hover
+    color: teal
+
+  img
+    padding-top: 5px
+    display: inline
+    height: 6em
+  ul
+    padding:
+      top: 0px
+      left: 0px
+      right: 0px
+      bottom: -20px
+    margin: 0px
+  li
+    display: inline
+    list-style: none
+  p
+   color: $salmon
+   font-family: $serif-two
+   display: inline
+   margin: 0px

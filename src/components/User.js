@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Image from '../stock_user_image.jpg'
 import Logo from '../kisslogo.gif'
 import '../styles/user.sass'
 import { Link, browserHistory } from 'react-router'

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Image from '../stock_user_image.jpg'
 import Logo from '../kisslogo.gif'
 import User from '../components/User.js'
 import { Link, browserHistory } from 'react-router'
@@ -15,6 +14,12 @@ class SinglePic extends Component {
     }
   }
 
+  getUserImage = () => {
+    let user = firebase.auth().currentUser
+    let userImage = user.photoURL
+    return userImage
+  }
+
   componentDidMount () {
     let user = firebase.auth().currentUser
     this.firebaseRef = firebase.syncState(`${user.uid}/pictures`, {
@@ -28,7 +33,7 @@ class SinglePic extends Component {
     return (
       <div className='userPage'>
         <header className='userHeader'>
-          <Link to='/log'><img src={Image} className='avatarImg' /></Link>
+          <Link to='/log'><img src={this.getUserImage()} className='avatarImg' /></Link>
           <nav>
             <ul>
               <Link to='/MyCollection'><li><a className='collection' href='#'>My Collection</a></li></Link>

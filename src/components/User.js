@@ -21,6 +21,7 @@ class User extends Component {
       state: 'pictures',
       asArray: true
     })
+    console.log(user.photoURL)
   }
 
   addAPic = (newPicture) => {
@@ -52,11 +53,17 @@ class User extends Component {
     })
   }
 
+  getUserImage = () => {
+    let user = firebase.auth().currentUser
+    let userImage = user.photoURL
+    return userImage
+  }
+
   render () {
     return (
       <div className='userPage'>
         <header className='userHeader'>
-          <Link to='/log'><img src={Image} className='avatarImg' /></Link>
+          <Link to='/log'><img src={this.getUserImage()} className='avatarImg' /></Link>
           <nav>
             <ul>
               <Link to='/MyCollection'><li><a className='collection' href='#'>My Collection</a></li></Link>

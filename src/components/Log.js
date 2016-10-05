@@ -10,7 +10,8 @@ class Log extends Component {
   getUserImage = () => {
     let user = firebase.auth().currentUser
     let userImage = user.photoURL
-    return userImage
+    let newUserImage = userImage.replace(/normal/, 'bigger')
+    return newUserImage
   }
 
   render () {

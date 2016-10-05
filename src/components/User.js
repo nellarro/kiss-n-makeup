@@ -20,7 +20,6 @@ class User extends Component {
       state: 'pictures',
       asArray: true
     })
-    console.log(user.photoURL)
   }
 
   addAPic = (newPicture) => {
@@ -44,7 +43,7 @@ class User extends Component {
     let storageRef = firebase.storage().ref()
     let imgRef = storageRef.child(file.name)
     imgRef.put(file).then((snapshot) => {
-      console.log('file uploaded')
+      console.log('Ding! File done')
       imgRef.getDownloadURL().then((url) => {
         this.setState({ url })
         this.addAPic(url)
@@ -55,7 +54,8 @@ class User extends Component {
   getUserImage = () => {
     let user = firebase.auth().currentUser
     let userImage = user.photoURL
-    return userImage
+    let newUserImage = userImage.replace(/normal/, 'bigger')
+    return newUserImage
   }
 
   render () {

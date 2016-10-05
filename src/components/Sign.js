@@ -21,7 +21,6 @@ class Sign extends Component {
     if (error) {
       console.log(error)
     } else {
-      console.log(user)
       this.setState({user: user})
       console.log('is setState working', this.state)
       console.log(user.user.photoURL)
@@ -30,7 +29,7 @@ class Sign extends Component {
   }
   _handleClickFB (event) {
     event.preventDefault()
-    console.log('user logged in to facebook')
+    console.log('user logged in with facebook')
     firebase.authWithOAuthPopup('facebook', this._authHandler)
   }
   _handleClickTwitter (event) {

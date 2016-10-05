@@ -18,7 +18,7 @@ class App extends Component {
       <Route path='/sign' component= {Sign} />
       <Route path='/log' component= {Log} />
       <Route path='/MyCollection' component= {User} />
-      <Route path='/image' component= {SinglePic} />
+      <Route path='/pickles/:index' component= {SinglePic} />
     </Router>
   )}
 }

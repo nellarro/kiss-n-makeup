@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Logo from '../kisslogo.gif'
+import Footer from '../components/Footer.js'
 import '../styles/user.sass'
 import { Link, browserHistory } from 'react-router'
 import firebase from '../firebase/firebase.js'
@@ -65,7 +65,7 @@ class User extends Component {
           <Link to='/log'><img src={this.getUserImage()} className='avatarImg' /></Link>
           <nav>
             <ul>
-              <Link to='/MyCollection'><li><a className='collection' href='#'>My Collection</a></li></Link>
+              <li><Link to='/MyCollection'>My Collection</Link></li>
               <li><a href='#'>Browse</a></li>
               <li><a href='#'>Favorites</a></li>
             </ul>
@@ -75,20 +75,12 @@ class User extends Component {
           <div className='galleryContainer'>
             <div className='container-border'>
               {this.state.pictures.map((picture, index) => {
-                return <Link to='/image' ><img src={picture} key={index} alt={index} height='250' width='250' /></Link>})}
+                return <Link to={`/pickles/${index}`} ><img src={picture} key={index} alt={index} height='250' width='250' /></Link>})}
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>
         </div>
-        <footer className='PageFooter'>
-          <div className='footer'>
-            <ul>
-              <li><img src={Logo} /></li>
-              <li><p> &copy; 2016 Copyright Jenell Pizarro. ARR.</p></li>
-              <li><a href='https://github.com/nellarro/v2-kiss-n-makeup'><i className="fa fa-github" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </footer>
+        <Footer />
       </div>
   ) }
 }

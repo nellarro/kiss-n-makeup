@@ -65,7 +65,7 @@ class User extends Component {
           <Link to='/log'><img src={this.getUserImage()} className='avatarImg' /></Link>
           <nav>
             <ul>
-              <li><Link to='/MyCollection'>My Collection</Link></li>
+              <li><Link to='/MyCollection' className='collection'>My Collection</Link></li>
               <li><a href='#'>Browse</a></li>
               <li><a href='#'>Favorites</a></li>
             </ul>

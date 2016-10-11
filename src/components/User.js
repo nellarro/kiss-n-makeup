@@ -9,7 +9,7 @@ class User extends Component {
     super(props)
     this.state = {
       url: '',
-      pictures: []
+      products: []
     }
   }
 
@@ -17,14 +17,14 @@ class User extends Component {
     let user = firebase.auth().currentUser
     this.firebaseRef = firebase.syncState(`${user.uid}/pictures`, {
       context: this,
-      state: 'pictures',
+      state: 'products',
       asArray: true
     })
   }
 
   addAPic = (newPicture) => {
     this.setState({
-      pictures: this.state.pictures.concat([newPicture])
+      products: this.state.products.concat([{url: newPicture}])
     })
   }
 
@@ -74,8 +74,8 @@ class User extends Component {
         <div className='gallery'>
           <div className='galleryContainer'>
             <div className='container-border'>
-              {this.state.pictures.map((picture, index) => {
-                return <Link to={`/pickles/${index}`} ><img src={picture} key={index} alt={index} height='250' width='250' /></Link>})}
+              {this.state.products.map((product, index) => {
+                return <Link to={`/pickles/${index}`} ><img src={product.url} key={index} alt={index} height='250' width='250' /></Link>})}
               <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>

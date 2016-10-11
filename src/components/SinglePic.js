@@ -10,8 +10,8 @@ class SinglePic extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      pictures: [],
-      picture: ''
+      products: [],
+      product: {},
     }
   }
 
@@ -23,13 +23,13 @@ class SinglePic extends Component {
 
   componentDidMount () {
     let user = firebase.auth().currentUser
-    this.firebaseRef = firebase.fetch(`${user.uid}/pictures`, {
+    this.firebaseRef = firebase.fetch(`${user.uid}/products`, {
       context: this,
-      state: 'pictures',
+      state: 'products',
       asArray: true
-    }).then((pictures) => {
-      let pic = pictures[this.props.params.index]
-      this.setState({ picture: pic })
+    }).then((products) => {
+      let item = products[this.props.params.index]
+      this.setState({ product: item })
     })
   }
 
@@ -47,13 +47,13 @@ class SinglePic extends Component {
           </nav>
         </header>
         <div className='SinglePicContainer'>
-          <img src={this.state.picture} height='400' width='400' />
+          <img src={this.state.product.url} height='400' width='400' />
         </div>
         <div className='Stats'>
-          <input type='text' placeholder='Batch Code'/>
-          <input type='text' placeholder='Color'/>
-          <input type='text' placeholder='Expiration'/>
-          <input type='text' placeholder='Location' />
+          <input type='text' placeholder='Batch Code' ref='Batch Code' />
+          <input type='text' placeholder='Color' ref='Color' />
+          <input type='text' placeholder='Expiration' ref='Expiration' />
+          <input type='text' placeholder='Location' ref='Location' />
         </div>
         <Footer />
       </div>

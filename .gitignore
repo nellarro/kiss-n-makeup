@@ -5,3 +5,5 @@ build
 npm-debug.log
 
 src/firebase
+
+knmExport.json

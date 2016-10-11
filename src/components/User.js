@@ -15,7 +15,7 @@ class User extends Component {
 
   componentDidMount () {
     let user = firebase.auth().currentUser
-    this.firebaseRef = firebase.syncState(`${user.uid}/pictures`, {
+    this.firebaseRef = firebase.syncState(`${user.uid}/products`, {
       context: this,
       state: 'products',
       asArray: true
@@ -26,12 +26,6 @@ class User extends Component {
     this.setState({
       products: this.state.products.concat([{url: newPicture}])
     })
-  }
-
-  downloadFile = () => {
-    let file = this.refs.upload.files[0]
-    let storage = firebase.storage()
-    let pathReference = storage.ref(file)
   }
 
   _handleClick = () => {

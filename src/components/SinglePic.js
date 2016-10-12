@@ -11,7 +11,7 @@ class SinglePic extends Component {
     super(props)
     this.state = {
       products: [],
-      product: {},
+      product: {}
     }
   }
 
@@ -21,15 +21,21 @@ class SinglePic extends Component {
     return userImage
   }
 
+  onChangeBC = (event) => {
+    console.log(event.target.value)
+    this.setState({ product: {...this.state.product, batchCode: event.target.value} })
+  }
+
+  onChangeColor = (event) => {
+    console.log(event.target.value)
+    this.setState({ product: {...this.state.product, color: event.target.value} })
+  }
+
   componentDidMount () {
     let user = firebase.auth().currentUser
-    this.firebaseRef = firebase.fetch(`${user.uid}/products`, {
+    this.firebaseRef = firebase.syncState(`${user.uid}/products/${this.props.params.index}`, {
       context: this,
-      state: 'products',
-      asArray: true
-    }).then((products) => {
-      let item = products[this.props.params.index]
-      this.setState({ product: item })
+      state: 'product'
     })
   }
 
@@ -50,10 +56,10 @@ class SinglePic extends Component {
           <img src={this.state.product.url} height='400' width='400' />
         </div>
         <div className='Stats'>
-          <input type='text' placeholder='Batch Code' ref='Batch Code' />
-          <input type='text' placeholder='Color' ref='Color' />
-          <input type='text' placeholder='Expiration' ref='Expiration' />
-          <input type='text' placeholder='Location' ref='Location' />
+          <input type='text' placeholder='Batch Code' ref='batchCode' onChange={this.onChangeBC} value={this.state.product.batchCode} />
+          <input type='text' placeholder='color' ref='Color' onChange={this.onChangeColor} value={this.state.product.color} />
+          <input type='text' placeholder='Expiration' ref='expiration' />
+          <input type='text' placeholder='Location' ref='location' />
         </div>
         <Footer />
       </div>

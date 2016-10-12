@@ -31,6 +31,16 @@ class SinglePic extends Component {
     this.setState({ product: {...this.state.product, color: event.target.value} })
   }
 
+  onChangeExpiration = (event) => {
+    console.log(event.target.value)
+    this.setState({ product: {...this.state.product, expiration: event.target.value} })
+  }
+
+  onChangeLocation = (event) => {
+    console.log(event.target.value)
+    this.setState({ product: {...this.state.product, location: event.target.value} })
+  }
+
   componentDidMount () {
     let user = firebase.auth().currentUser
     this.firebaseRef = firebase.syncState(`${user.uid}/products/${this.props.params.index}`, {
@@ -58,8 +68,8 @@ class SinglePic extends Component {
         <div className='Stats'>
           <input type='text' placeholder='Batch Code' ref='batchCode' onChange={this.onChangeBC} value={this.state.product.batchCode} />
           <input type='text' placeholder='color' ref='Color' onChange={this.onChangeColor} value={this.state.product.color} />
-          <input type='text' placeholder='Expiration' ref='expiration' />
-          <input type='text' placeholder='Location' ref='location' />
+          <input type='text' placeholder='Expiration' ref='expiration' onChange={this.onChangeExpiration} value={this.state.product.expiration} />
+          <input type='text' placeholder='Location' ref='location' onChange={this.onChangeLocation} value={this.state.product.location} />
         </div>
         <Footer />
       </div>

@@ -27,17 +27,14 @@ class SinglePic extends Component {
   }
 
   onChangeColor = (event) => {
-    console.log(event.target.value)
     this.setState({ product: {...this.state.product, color: event.target.value} })
   }
 
   onChangeExpiration = (event) => {
-    console.log(event.target.value)
     this.setState({ product: {...this.state.product, expiration: event.target.value} })
   }
 
   onChangeLocation = (event) => {
-    console.log(event.target.value)
     this.setState({ product: {...this.state.product, location: event.target.value} })
   }
 

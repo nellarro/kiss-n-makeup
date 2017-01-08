@@ -56,7 +56,7 @@ class User extends Component {
     return (
       <div className='userPage'>
         <header className='userHeader'>
-          <Link to='/log'><img src={this.getUserImage()} className='avatarImg' /></Link>
+          <Link to='/log'><img src={this.getUserImage()} className='avatarImg' key=""/></Link>
           <nav>
             <ul>
               <li><Link to='/MyCollection' className='collection'>My Collection</Link></li>
@@ -70,7 +70,7 @@ class User extends Component {
             <div className='container-border'>
               {this.state.products.map((product, index) => {
                 return <Link to={`/pickles/${index}`} ><img src={product.url} key={index} alt={index} height='250' width='250' /></Link>})}
-              <input type='file' ref= 'upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
+              <input type='file' ref='upload' id='files' accept='image/*' onChange={this.uploadFile.bind(this)} />
             </div>
           </div>
         </div>

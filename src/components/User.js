@@ -47,8 +47,8 @@ class User extends Component {
 
   getUserImage = () => {
     let user = firebase.auth().currentUser
-    let userImage = user.photoURL
-    let newUserImage = userImage.replace(/normal/, 'bigger')
+    let userImage = user.providerData[0].photoURL
+    let newUserImage = userImage.replace(/normal/, '400x400')
     return newUserImage
   }
 

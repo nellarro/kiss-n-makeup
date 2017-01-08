@@ -52,7 +52,7 @@ class Sign extends Component {
         <div className='firstrow'>
           <button className='facebook' onClick={this._handleClickFB}><i className='fa fa-facebook-square' aria-hidden='true' /></button>
           <button className='twitter' onClick={this._handleClickTwitter}><i className='fa fa-twitter' aria-hidden='true' /></button>
-          <button className='instagram'><i className='fa fa-instagram' aria-hidden='true' /></button>
+          {/* <button className='instagram'><i className='fa fa-instagram' aria-hidden='true' /></button> */}
           <button className='google' onClick={this._handleClickGoogle}><i className='fa fa-google' aria-hidden='true' /></button>
         </div>
       </div>)

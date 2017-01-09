@@ -7,12 +7,6 @@ html
 body
   margin: 0 0 100px
 
-.userPage
-  background:
-    image: url(../wood.jpg)
-    size: cover
-    repeat: no-repeat
-
 .userHeader
   background-color: #323346
   min-height: 120px
@@ -61,6 +55,14 @@ nav a:hover
     top: .5em
     right: .5em
 
+.gallery
+  height: 100vh
+  margin-bottom: -40px
+  background:
+    image: url(../wood.jpg)
+    size: cover
+    repeat: no-repeat
+
 .galleryContainer
   padding-top: 1.5em
   padding-left: 1.5em
@@ -83,9 +85,11 @@ nav a:hover
   background-color: #323346
   height: 120px
   bottom: 0
-  margin-top: 30px
-  display: flex
-  min-height: calc(50vh - 400px)
+  // margin-top: 30px
+  margin-bottom: -50px
+  // display: flex
+  min-height: 120px
+  // min-height: calc(100vh - 75vh)
   left: 0
   position: relative
   width: 100vw

@@ -55,8 +55,8 @@ class SinglePic extends Component {
           <nav>
             <ul>
               <li><Link to='/MyCollection' className='collection'>My Collection</Link></li>
-              <li><a href='#'>Browse</a></li>
-              <li><a href='#'>Favorites</a></li>
+              {/* <li><a href='#'>Browse</a></li>
+              <li><a href='#'>Favorites</a></li> */}
             </ul>
           </nav>
         </header>

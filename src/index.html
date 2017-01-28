@@ -36,8 +36,19 @@ body {
   from {
     transform: rotate(0);
   }
+  60% {
+    transform: rotate(120deg);
+  }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes move-grow-ball {
+  from, to {
+    transform: translate(30%, 30%) scale(1.5);
+  }
+  50% {
+    transform: translate(100%, 100%) scale(1);
   }
 }
 .ball {
@@ -66,12 +77,14 @@ body {
 }
 .ball:nth-child(2):before {
   background: #ff6764;
+  animation-name: move-grow-ball;
 }
 .ball:nth-child(3) {
   transform: rotate(90deg);
 }
 .ball:nth-child(3):before {
   background: #cdcf53;
+  animation-name: move-grow-ball;
 }
 .ball:nth-child(4):before {
   background: #01ABFF;
@@ -83,7 +96,8 @@ body {
   50% {
     transform: translate(100%, 100%);
   }
-}</style>
+}
+</style>
     <script src="https://use.fontawesome.com/1297321b98.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Coustard|Give+You+Glory|Homemade+Apple|Raleway" rel="stylesheet">
     <title>Kiss & Makeup</title>

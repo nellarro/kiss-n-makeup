@@ -1,7 +1,7 @@
 # Kiss & Makeup
 ## A beautiful way to inventory makeup. A labour of love.
 
- [Check it out!](www.nellarro.kiss-n-makeup.surge.sh)
+ [Check it out!](http://nellarro.kiss-n-makeup.surge.sh)
 
 
 This is my capstone project from The Iron Yard.
